@@ -21,7 +21,7 @@ public class AwaitSignal {
 
         @Override
         public void run() {
-
+            list.peek();
         }
     }
 }
