@@ -1,4 +1,4 @@
-package com.answer.thread.chapter4.c3;
+package com.answer.thread.chapter4.threadlocal;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

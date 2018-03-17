@@ -1,4 +1,4 @@
-package com.answer.thread.chapter4.c3;
+package com.answer.thread.chapter4.threadlocal;
 
 import java.util.Random;
 import java.util.concurrent.*;
