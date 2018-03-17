@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author answer
@@ -20,8 +19,8 @@ public class ListStreamFilter {
         List<String> list1 = Arrays.asList(array1);
         List<String> list2 = Arrays.asList(array2);
         //差及 list1-list2
-        List<String> list3 = list1.stream().filter(item -> !list2.contains(item)).collect(Collectors.toList());
+//        List<String> list3 = list1.stream().filter(item -> !list2.contains(item)).collect(Collectors.toList());
 //        List<String> list3 = list2.stream().filter(item -> !list1.contains(item)).collect(Collectors.toList());
-        list3.forEach(System.out::println);
+//        list3.forEach(System.out::println);
     }
 }

@@ -23,7 +23,7 @@ public class ThreadLocalSimpleDateFormat {
         @Override
         public void run() {
             try {
-                //如果当前线程不持有SimpleDateFormat的对象锁，则新建一个并把它设置到当前县城中，如果已经持有则直接使用
+                //如果当前线程不持有SimpleDateFormat的对象锁，则新建一个并把它设置到当前线程中，如果已经持有则直接使用
                 if (tl.get() == null) {
                     tl.set(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
                 }
