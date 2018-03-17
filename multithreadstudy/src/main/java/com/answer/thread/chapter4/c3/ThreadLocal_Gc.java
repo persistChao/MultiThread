@@ -18,13 +18,9 @@ public class ThreadLocal_Gc {
             System.out.println(this.toString() + " is gc!");
         }
     };
-
     static volatile CountDownLatch cd = new CountDownLatch(10000);
-
     public static class ParseDate implements Runnable {
-
         int i = 0;
-
         public ParseDate(int i) {
             this.i = i;
         }
