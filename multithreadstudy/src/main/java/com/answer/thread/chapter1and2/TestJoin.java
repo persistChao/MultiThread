@@ -11,18 +11,21 @@ package com.answer.thread.chapter1and2;/**
  * @create 10:08
  **/
 public class TestJoin {
-    public volatile static int i = 0;
+    public  static int a = 0;
     public static class AddThread extends Thread {
         @Override
         public void run() {
-            for (int i = 0; i<10000000;i++);
+            for (int i = 0; i<10000000;i++){
+                a++;
+            }
+            System.out.println(a);
         }
     }
 
     public static void main(String[] args) throws InterruptedException {
-        AddThread at = new AddThread();
+        Thread at = new AddThread();
         at.start();
         at.join();
-        System.out.println(i);
+        System.out.println(a);
     }
 }
