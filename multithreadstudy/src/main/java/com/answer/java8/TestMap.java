@@ -40,4 +40,11 @@ public class TestMap {
             System.out.println("Value = " + value);
         }
     }
+
+    @Test
+    public void testIntegerEquals() {
+        Integer a = 1;
+        Integer b = 1;
+        System.out.println(a.equals(b) + "/" + (a.intValue()==b.intValue()));
+    }
 }
