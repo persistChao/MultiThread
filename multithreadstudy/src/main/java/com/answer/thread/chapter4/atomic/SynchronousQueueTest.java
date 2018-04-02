@@ -5,6 +5,10 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * SynchronousQueue<>是一个阻塞队列 实现一个泛型，此队列在take之前必须有值，在put之前必须为空
+ * SynchronousQueue是这样一种阻塞队列，其中每个 put 必须等待一个 take，反之亦然。
+ * 同步队列没有任何内部容量，甚至连一个队列的容量都没有。
+ * 不能在同步队列上进行 peek，因为仅在试图要取得元素时，该元素才存在
  * @author answer
  * @description
  * @create 2018/4/2 11:56

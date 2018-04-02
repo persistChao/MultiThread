@@ -5,8 +5,8 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author answer
  * @description lock 与 lockInterruptibly比较区别在于：
-lock 优先考虑获取锁，待获取锁成功后，才响应中断。
-lockInterruptibly 优先考虑响应中断，而不是响应锁的普通获取或重入获取。
+ * lock 优先考虑获取锁，待获取锁成功后，才响应中断。
+ * lockInterruptibly 优先考虑响应中断，而不是响应锁的普通获取或重入获取。
  * @create 2018/2/12 11:24
  **/
 public class IntLock implements Runnable{
