@@ -13,6 +13,7 @@ public class RealData implements Data{
         for (int i = 0 ; i< 10;i++) {
             sb.append(para);
             try {
+                //这里使用sleep代替一个很慢的操作过程
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -23,6 +24,6 @@ public class RealData implements Data{
 
     @Override
     public String getResult() {
-        return null;
+        return result;
     }
 }
