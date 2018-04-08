@@ -16,14 +16,14 @@ public class ConcurrentCompute {
      * p1的计算结果B+C
      */
     public static class Plus implements Runnable{
-        public static BlockingQueue<Msg> bg = new LinkedBlockingQueue<>();
+        public static BlockingQueue<Msg> bq = new LinkedBlockingQueue<>();
 
         @Override
         public void run() {
             boolean run = true;
             while (run) {
                 try {
-                    Msg msg = bg.take();
+                    Msg msg = bq.take();
                     msg.j = msg.i + msg.j;
                     Muitiply.bq.add(msg);
                 }catch (InterruptedException e) {
@@ -83,7 +83,7 @@ public class ConcurrentCompute {
                 msg.i = i;
                 msg.j = j;
                 msg.orgStr = "((" + i + "+" + j + ")*" + i + ")/2";
-                Plus.bg.add(msg);
+                Plus.bq.add(msg);
             }
         }
     }
