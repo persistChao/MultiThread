@@ -1,7 +1,5 @@
 package com.answer.thread.chapter5.future.real;
 
-import javafx.concurrent.Task;
-
 import java.util.concurrent.*;
 
 /**
