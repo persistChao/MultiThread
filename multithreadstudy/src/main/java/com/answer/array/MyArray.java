@@ -57,7 +57,7 @@ public class MyArray {
      * @param value
      * @return
      */
-    public int searchValue(int value) {
+    public int find(int value) {
         int i ;
         for (i = 0; i < elems ; i++) {
             if (intArray[i] == value) {
@@ -69,4 +69,65 @@ public class MyArray {
         }
         return i;
     }
+
+    public int get(int i) {
+        if (i < 0 || i > elems) {
+            return -1;
+        }
+        return intArray[i];
+    }
+
+    public boolean delete(int value) {
+        int k = find(value);
+        if (k == -1) {
+            return false;
+        } else {
+            if (k == elems - 1) {
+                elems--;
+            } else {
+                for (int i =0;i < elems-1 ; i++) {
+                    intArray[i] = intArray[i + 1];
+                }
+                elems--;
+            }
+            return true;
+        }
+
+    }
+
+    public boolean modify(int oldValue, int newValue) {
+        int i = find(oldValue);
+        if (i == -1) {
+            System.out.println("要修改的数据不存在");
+            return false;
+        } else {
+            intArray[i] = newValue;
+            return true;
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+        //创建自定义封装数组结构，数组大小为4
+        MyArray array = new MyArray(4);
+        //添加4个元素分别是1,2,3,4
+        array.add(1);
+        array.add(2);
+        array.add(3);
+        array.add(4);
+        //显示数组元素
+        array.display();
+        System.out.println();
+        //根据下标为0的元素
+        int i = array.get(0);
+        System.out.println("第0个位置值：" + i);
+        //删除4的元素
+        array.delete(4);
+        //将元素3修改为33
+        array.modify(3, 33);
+        array.display();
+    }
+
+
 }
