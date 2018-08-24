@@ -1,6 +1,8 @@
 package com.answer.suanfa;
 
 
+import java.util.LinkedList;
+
 /**
  * 单链表
  * Created by chao on 2018/8/23.
@@ -12,6 +14,10 @@ public class SingleLinkedList {
     public SingleLinkedList(int size, Node head) {
         this.head = null;
         this.size = 0;
+    }
+
+    public SingleLinkedList() {
+
     }
 
     //链表的每个节点类
@@ -73,5 +79,63 @@ public class SingleLinkedList {
         }
         return true;
     }
+
+    public boolean isEmpty() {
+        return size==0;
+    }
+
+    public Node find(Object object) {
+        Node current = head;
+        int tempSize = size;
+        while (size > 0) {
+            if (object.equals(current.data)) {
+                return current;
+            } else {
+                current = current.next;
+            }
+            tempSize--;
+        }
+        return null;
+    }
+
+    //显示节点信息
+    public void display() {
+        if (size > 0) {
+            Node node = head;
+            int tempSize = size;
+            if (tempSize == 1) {
+                System.out.println("[" + node.data + "]");
+            }
+            while (tempSize > 0) {
+//                if (node.equals(head)) {
+//                    System.out.print("[" + node.data +"->");
+//                } else if (node.next == null) {
+//                    System.out.print( node.data + "]");
+//                } else {
+//                    System.out.print(node.data+"->");
+//                }
+                System.out.print(node.data + "-->");
+                node = node.next;
+                tempSize--;
+            }
+            System.out.println();
+        } else {
+            System.out.println("[]");
+        }
+    }
+
+    public static void main(String[] args) {
+        SingleLinkedList linkedList = new SingleLinkedList();
+        linkedList.addHead("A");
+        linkedList.addHead("B");
+        linkedList.addHead("C");
+        linkedList.display();
+        linkedList.delete("B");
+        linkedList.addHead("D");
+        linkedList.display();
+        System.out.println(linkedList.find("C"));
+    }
+
+
 
 }
