@@ -53,6 +53,13 @@ public class SingleLinkedList {
         return object;
     }
 
+    public Object deleteHead() {
+        Object o = head.data;
+        head = head.next;
+        size--;
+        return o;
+    }
+
     //删除指定的元素，删除成功返回true
     public boolean delete(Object object) {
         if (size == 0) {
