@@ -11,13 +11,13 @@ public class ThreadYield {
 
         @Override
         public void run() {
-            for (int i = 0; i < 5; i++) {
-                if (i==3) {
+//            for (int i = 0; i < 5; i++) {
+//                if (i==3) {
                     System.out.println("当前线程是" + Thread.currentThread().getName());
                     Thread.currentThread().yield();
-                }
+//                }
                 System.out.println("执行的是" + Thread.currentThread().getName());
-            }
+//            }
         }
     }
 
