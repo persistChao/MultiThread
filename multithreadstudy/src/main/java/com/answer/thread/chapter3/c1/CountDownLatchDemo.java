@@ -35,7 +35,7 @@ public class CountDownLatchDemo implements Runnable {
         }
         //等待检查
         end.await();
-        System.out.println("count = " + end.getCount());
+        System.out.println("等待完成count = " + end.getCount());
         System.out.println("Fire!");
         exec.shutdown();
     }

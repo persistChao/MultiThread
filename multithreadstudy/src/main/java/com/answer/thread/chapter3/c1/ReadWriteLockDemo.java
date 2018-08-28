@@ -61,12 +61,15 @@ public class ReadWriteLockDemo {
             }
         };
 
+        long s = System.currentTimeMillis();
         for (int i =0 ; i<18 ; i++) {
             new Thread(readRunnable).start();
         }
         for (int i = 18 ; i <20 ; i++) {
             new Thread(writeRunnable).start();
         }
+
+        System.out.println("运行时间：" +(System.currentTimeMillis()-s)/1000);
     }
 
 }
