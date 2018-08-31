@@ -33,7 +33,7 @@ public class ReenterLockCondition implements Runnable{
         t1.start();
         Thread.sleep(2000);
         //通知线程t1 继续执行
-        //signal 唤醒锁之前先获取当前锁 然后使其继续执行
+        //signal 唤醒锁之前先获取当前锁 然后使其继续执行 await 和 signal是和lock一起使用的 必须先获取lock才能使用
         lock.lock();
         condition.signal();
         lock.unlock();
