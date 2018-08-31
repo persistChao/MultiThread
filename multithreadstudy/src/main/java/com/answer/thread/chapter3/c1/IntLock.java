@@ -36,7 +36,9 @@ public class IntLock implements Runnable{
                     e.printStackTrace();
                 }
                 lock2.lockInterruptibly();
+                System.out.println("t1完成工作");
             }else {
+                //由于主线程中 t2设置终断 所以 t2线程释放lock2 同时 放弃lock1的申请
                 lock2.lockInterruptibly();
                 try {
                     Thread.sleep(500);
@@ -44,6 +46,7 @@ public class IntLock implements Runnable{
                     e.printStackTrace();
                 }
                 lock1.lockInterruptibly();
+                System.out.println("t2完成工作");
             }
         }catch (InterruptedException e) {
             e.printStackTrace();
