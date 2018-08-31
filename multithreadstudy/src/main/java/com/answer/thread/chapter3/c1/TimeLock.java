@@ -17,7 +17,7 @@ public class TimeLock implements Runnable{
         try {
             if (lock.tryLock(5 , TimeUnit.SECONDS)){
                 System.out.println(Thread.currentThread().getName() + " 进入");
-                Thread.sleep(6000);
+                Thread.sleep(5000);
             }else {
                 System.out.println(Thread.currentThread().getName() + " -- get lock failed");
             }
@@ -32,8 +32,8 @@ public class TimeLock implements Runnable{
 
     public static void main(String[] args) {
         TimeLock TL = new TimeLock();
-        Thread t1 = new Thread(TL);
-        Thread t2 = new Thread(TL);
+        Thread t1 = new Thread(TL ,"t1");
+        Thread t2 = new Thread(TL , "t2");
         t1.start();
         t2.start();
     }

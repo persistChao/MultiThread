@@ -28,7 +28,7 @@ public class TryLock implements Runnable {
                         } catch (InterruptedException e) {}
                         if (lock2.tryLock()) {
                             try {
-                                System.out.println(Thread.currentThread().getId() + ":My job done");
+                                System.out.println(Thread.currentThread().getName() + ":My job done");
                                 return;
                             } finally {
                                 lock2.unlock();
@@ -48,7 +48,7 @@ public class TryLock implements Runnable {
                         } catch (InterruptedException e) {}
                         if (lock1.tryLock()) {
                             try {
-                                System.out.println(Thread.currentThread().getId() + ": My job done");
+                                System.out.println(Thread.currentThread().getName() + ": My job done");
                                 return;
                             } finally {
                                 lock1.unlock();
@@ -65,8 +65,8 @@ public class TryLock implements Runnable {
     public static void main(String[] args) {
         TryLock r1 = new TryLock(1);
         TryLock r2 = new TryLock(2);
-        Thread t1 = new Thread(r1);
-        Thread t2 = new Thread(r2);
+        Thread t1 = new Thread(r1 , "t1");
+        Thread t2 = new Thread(r2 , "t2");
         t1.start();
         t2.start();
     }
