@@ -45,6 +45,7 @@ public class ReadWriteLockDemo {
             public void run() {
                 try {
                     demo.handleRead(readLock);
+//                    demo.handleRead(lock);
                 }catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -55,6 +56,7 @@ public class ReadWriteLockDemo {
             public void run() {
                 try {
                     demo.handleWrite(writeLock,new Random().nextInt());
+//                    demo.handleWrite(lock, new Random().nextInt());
                 }catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -69,7 +71,6 @@ public class ReadWriteLockDemo {
             new Thread(writeRunnable).start();
         }
 
-        System.out.println("运行时间：" +(System.currentTimeMillis()-s)/1000);
     }
 
 }
