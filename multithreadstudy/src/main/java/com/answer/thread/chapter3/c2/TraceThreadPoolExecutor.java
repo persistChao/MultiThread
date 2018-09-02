@@ -47,9 +47,9 @@ public class TraceThreadPoolExecutor extends ThreadPoolExecutor{
                 TimeUnit.SECONDS , new SynchronousQueue<Runnable>());
         for (int i = 0; i < 5 ; i++) {
             //使用execute执行
-//            pools.execute(new DivTask(100 , i));
+            pools.execute(new DivTask(100 , i));
             //使用submit 提交任务
-            pools.submit(new DivTask(100 , i));
+//            pools.submit(new DivTask(100 , i));
             //使用submit 打印的异常堆栈信息 不如 execute打印的全面
         }
     }
