@@ -65,7 +65,7 @@ public class TestSimpleDateFormat {
     }
 
     public static void main(String[] args) {
-        ExecutorService es = Executors.newFixedThreadPool(10);
+        ExecutorService es = Executors.newFixedThreadPool(100);
         for (int i = 10; i < 1000; i++) {
             es.execute(new PareseDate(i));
         }
