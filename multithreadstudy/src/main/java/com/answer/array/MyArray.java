@@ -1,5 +1,9 @@
 package com.answer.array;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * 数组操作
  * Created by chao on 2018/8/24.
@@ -110,6 +114,7 @@ public class MyArray {
 
 
     public static void main(String[] args) {
+        List<Integer> s = new ArrayList<>();
         //创建自定义封装数组结构，数组大小为4
         MyArray array = new MyArray(4);
         //添加4个元素分别是1,2,3,4
