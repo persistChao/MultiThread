@@ -5,7 +5,7 @@ package com.answer.classload;
  */
 public class TestClass {
     public static void main(String[] args) {
-//        System.out.println(SubClass.value);
+        System.out.println(SubClass.value);
         System.out.println("------------------");
 //        SubClass subClass = new SubClass();
         SuperClass[] sca = new SuperClass[10];

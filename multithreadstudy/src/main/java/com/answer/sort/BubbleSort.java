@@ -2,7 +2,9 @@ package com.answer.sort;
 
 /**
  * 冒泡算法
- * Created by chao on 2018/8/24.
+ *
+ * @author chao
+ * @date 2018/8/24
  */
 public class BubbleSort {
     public static int[] sort(int[] array) {
@@ -20,7 +22,7 @@ public class BubbleSort {
                     flag = false;
                 }
             }
-            if (flag = flag) {
+            if (flag) {
                 break;
             }
             //第 i轮排序的结果为
